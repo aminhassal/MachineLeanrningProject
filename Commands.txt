@@ -1,0 +1,10 @@
+.venv\Scripts\activate
+
+pip install pandas
+
+pip3 install pandas
+
+pip install openpyxl
+
+
+pip install joblib
