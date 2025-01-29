@@ -8,3 +8,17 @@ pip install openpyxl
 
 
 pip install joblib
+
+pip install tensorflow
+
+source venv/bin/activate  # (لـ macOS/Linux)
+venv\Scripts\activate      # (لـ Windows)
+pip install tensorflow.
+pip install transformers
+
+
+
+pip install tensorflow-gpu
+
+
+
