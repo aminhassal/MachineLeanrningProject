@@ -20,11 +20,11 @@ y = label_encoder.fit_transform(categories)
 n_classes = len(label_encoder.classes_)
 
 # 4. تحميل Tokenizer الخاص بـ BERT
-tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+tokenizer = AutoTokenizer.from_pretrained("bert-base-arabic")
 X_encoded = tokenizer(terms, padding=True, truncation=True, return_tensors="tf", max_length=128)
 
 # 5. تحميل نموذج BERT للتصنيف
-model = TFAutoModelForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=n_classes)
+model = TFAutoModelForSequenceClassification.from_pretrained("bert-base-arabic", num_labels=n_classes)
 
 # 6. تجميع النموذج
 optimizer = Adam(learning_rate=2e-5)
@@ -45,3 +45,13 @@ dump(label_encoder, label_encoder_file_path)
 print(f"تم حفظ النموذج في: {model_file_path}")
 print(f"تم حفظ الـ Tokenizer في: {tokenizer_file_path}")
 print(f"تم حفظ الـ Label Encoder في: {label_encoder_file_path}")
+
+
+#----------------------------------------------------------------------
+
+# سنستخدم Hugging Face's Transformers و TensorFlow لإنشاء نموذج تصنيف
+
+
+# استخدام bert-base-arabic (أو bert-base-uncased للنصوص الإنجليزية).
+# استخدام AutoTokenizer و TFAutoModelForSequenceClassification لتحويل النصوص إلى مدخلات جاهزة لـ BERT.
+# إعادة تدريب النموذج على بياناتك الخاصة.
