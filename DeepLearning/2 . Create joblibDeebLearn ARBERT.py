@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 from sklearn.preprocessing import LabelEncoder
-from tensorflow.keras.optimizers.legacy import Adam
+from tensorflow.keras.optimizers.legacy import Adam # type: ignore
 from joblib import dump
 
 # 1. تحميل القاموس من ملف Excel
